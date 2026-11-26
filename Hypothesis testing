@@ -1,0 +1,223 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "6fa9ce8c-02c7-4e25-995a-841e8cee0cf5",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "FileNotFoundError",
+     "evalue": "[Errno 2] No such file or directory: 'dataset_2191_sleep.csv'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mFileNotFoundError\u001b[39m                         Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[1]\u001b[39m\u001b[32m, line 6\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mimport\u001b[39;00m pandas \u001b[38;5;28;01mas\u001b[39;00m pd\n\u001b[32m      3\u001b[39m \u001b[38;5;28;01mimport\u001b[39;00m matplotlib.pyplot \u001b[38;5;28;01mas\u001b[39;00m plt\n\u001b[32m      4\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m scipy \u001b[38;5;28;01mimport\u001b[39;00m stats\n\u001b[32m      5\u001b[39m \n\u001b[32m----> \u001b[39m\u001b[32m6\u001b[39m df = pd.read_csv(\u001b[33m\"dataset_2191_sleep.csv\"\u001b[39m)\n\u001b[32m      7\u001b[39m \n\u001b[32m      8\u001b[39m \u001b[38;5;66;03m# Check the column names\u001b[39;00m\n\u001b[32m      9\u001b[39m print(df.columns)\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1866\u001b[39m, in \u001b[36mread_csv\u001b[39m\u001b[34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, skip_blank_lines, parse_dates, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[39m\n\u001b[32m   1853\u001b[39m kwds_defaults = _refine_defaults_read(\n\u001b[32m   1854\u001b[39m     dialect,\n\u001b[32m   1855\u001b[39m     delimiter,\n\u001b[32m   (...)\u001b[39m\u001b[32m   1862\u001b[39m     lineterminator=lineterminator,\n\u001b[32m   1863\u001b[39m )\n\u001b[32m   1864\u001b[39m kwds.update(kwds_defaults)\n\u001b[32m-> \u001b[39m\u001b[32m1866\u001b[39m \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[30;43m_read\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43mfilepath_or_buffer\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43mkwds\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parsers/readers.py:423\u001b[39m, in \u001b[36m_read\u001b[39m\u001b[34m(filepath_or_buffer, kwds)\u001b[39m\n\u001b[32m    420\u001b[39m             \u001b[38;5;28;01mreturn\u001b[39;00m result\n\u001b[32m    422\u001b[39m \u001b[38;5;66;03m# Create the parser.\u001b[39;00m\n\u001b[32m--> \u001b[39m\u001b[32m423\u001b[39m parser = \u001b[30;43mTextFileReader\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43mfilepath_or_buffer\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43m*\u001b[39;49m\u001b[30;43m*\u001b[39;49m\u001b[30;43mkwds\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m    425\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m chunksize \u001b[38;5;129;01mor\u001b[39;00m iterator:\n\u001b[32m    426\u001b[39m     \u001b[38;5;28;01mreturn\u001b[39;00m parser\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parsers/readers.py:2721\u001b[39m, in \u001b[36mTextFileReader.__init__\u001b[39m\u001b[34m(self, f, engine, **kwds)\u001b[39m\n\u001b[32m   2718\u001b[39m     \u001b[38;5;28mself\u001b[39m.options[\u001b[33m\"\u001b[39m\u001b[33mhas_index_names\u001b[39m\u001b[33m\"\u001b[39m] = kwds[\u001b[33m\"\u001b[39m\u001b[33mhas_index_names\u001b[39m\u001b[33m\"\u001b[39m]\n\u001b[32m   2720\u001b[39m \u001b[38;5;28mself\u001b[39m.handles: IOHandles | \u001b[38;5;28;01mNone\u001b[39;00m = \u001b[38;5;28;01mNone\u001b[39;00m\n\u001b[32m-> \u001b[39m\u001b[32m2721\u001b[39m \u001b[38;5;28mself\u001b[39m._engine = \u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43m_make_engine\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43mf\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mengine\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/parsers/readers.py:2988\u001b[39m, in \u001b[36mTextFileReader._make_engine\u001b[39m\u001b[34m(self, f, engine)\u001b[39m\n\u001b[32m   2983\u001b[39m is_text = engine \u001b[38;5;129;01min\u001b[39;00m (\u001b[33m\"\u001b[39m\u001b[33mpython\u001b[39m\u001b[33m\"\u001b[39m, \u001b[33m\"\u001b[39m\u001b[33mpython-fwf\u001b[39m\u001b[33m\"\u001b[39m) \u001b[38;5;129;01mor\u001b[39;00m (\n\u001b[32m   2984\u001b[39m     engine == \u001b[33m\"\u001b[39m\u001b[33mc\u001b[39m\u001b[33m\"\u001b[39m\n\u001b[32m   2985\u001b[39m     \u001b[38;5;129;01mand\u001b[39;00m \u001b[38;5;28mself\u001b[39m.options.get(\u001b[33m\"\u001b[39m\u001b[33mencoding\u001b[39m\u001b[33m\"\u001b[39m, \u001b[33m\"\u001b[39m\u001b[33mutf-8\u001b[39m\u001b[33m\"\u001b[39m) \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;129;01min\u001b[39;00m (\u001b[38;5;28;01mNone\u001b[39;00m, \u001b[33m\"\u001b[39m\u001b[33mutf-8\u001b[39m\u001b[33m\"\u001b[39m)\n\u001b[32m   2986\u001b[39m )\n\u001b[32m   2987\u001b[39m mode = \u001b[33m\"\u001b[39m\u001b[33mr\u001b[39m\u001b[33m\"\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m is_text \u001b[38;5;28;01melse\u001b[39;00m \u001b[33m\"\u001b[39m\u001b[33mrb\u001b[39m\u001b[33m\"\u001b[39m\n\u001b[32m-> \u001b[39m\u001b[32m2988\u001b[39m \u001b[38;5;28mself\u001b[39m.handles = \u001b[30;43mget_handle\u001b[39;49m\u001b[30;43m(\u001b[39;49m\n\u001b[32m   2989\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mf\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2990\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mmode\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2991\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mencoding\u001b[39;49m\u001b[30;43m=\u001b[39;49m\u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43moptions\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mget\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mencoding\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43;01mNone\u001b[39;49;00m\u001b[30;43m)\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2992\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mcompression\u001b[39;49m\u001b[30;43m=\u001b[39;49m\u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43moptions\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mget\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mcompression\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43;01mNone\u001b[39;49;00m\u001b[30;43m)\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2993\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mmemory_map\u001b[39;49m\u001b[30;43m=\u001b[39;49m\u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43moptions\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mget\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mmemory_map\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43;01mFalse\u001b[39;49;00m\u001b[30;43m)\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2994\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mis_text\u001b[39;49m\u001b[30;43m=\u001b[39;49m\u001b[30;43mis_text\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2995\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43merrors\u001b[39;49m\u001b[30;43m=\u001b[39;49m\u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43moptions\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mget\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mencoding_errors\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mstrict\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m)\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2996\u001b[39m \u001b[30;43m    \u001b[39;49m\u001b[30;43mstorage_options\u001b[39;49m\u001b[30;43m=\u001b[39;49m\u001b[30;43mself\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43moptions\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mget\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mstorage_options\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43;01mNone\u001b[39;49;00m\u001b[30;43m)\u001b[39;49m\u001b[30;43m,\u001b[39;49m\n\u001b[32m   2997\u001b[39m \u001b[30;43m\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m   2998\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m \u001b[38;5;28mself\u001b[39m.handles \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m\n\u001b[32m   2999\u001b[39m f = \u001b[38;5;28mself\u001b[39m.handles.handle\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pandas/io/common.py:954\u001b[39m, in \u001b[36mget_handle\u001b[39m\u001b[34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[39m\n\u001b[32m    945\u001b[39m         handle = \u001b[38;5;28mopen\u001b[39m(\n\u001b[32m    946\u001b[39m             handle,\n\u001b[32m    947\u001b[39m             ioargs.mode,\n\u001b[32m   (...)\u001b[39m\u001b[32m    950\u001b[39m             newline=\u001b[33m\"\u001b[39m\u001b[33m\"\u001b[39m,\n\u001b[32m    951\u001b[39m         )\n\u001b[32m    952\u001b[39m     \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[32m    953\u001b[39m         \u001b[38;5;66;03m# Binary mode\u001b[39;00m\n\u001b[32m--> \u001b[39m\u001b[32m954\u001b[39m         handle = \u001b[30;43mopen\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43mhandle\u001b[39;49m\u001b[30;43m,\u001b[39;49m\u001b[30;43m \u001b[39;49m\u001b[30;43mioargs\u001b[39;49m\u001b[30;43m.\u001b[39;49m\u001b[30;43mmode\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m    955\u001b[39m     handles.append(handle)\n\u001b[32m    957\u001b[39m \u001b[38;5;66;03m# Convert BytesIO or file objects passed with an encoding\u001b[39;00m\n",
+      "\u001b[31mFileNotFoundError\u001b[39m: [Errno 2] No such file or directory: 'dataset_2191_sleep.csv'"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "from scipy import stats\n",
+    "\n",
+    "df = pd.read_csv(\"dataset_2191_sleep.csv\")\n",
+    "\n",
+    "# Check the column names\n",
+    "print(df.columns)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3a2e135f-6e72-4154-9052-36af340ff50f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c88d4fd5-ac51-46ed-8a14-04de63de0e8b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Select the relevant variables and remove missing values\n",
+    "data = df[['total_sleep', 'max_life_span']].dropna()\n",
+    "\n",
+    "x = data['total_sleep'].to_numpy()\n",
+    "y = data['max_life_span'].to_numpy()\n",
+    "\n",
+    "print(\"Sample size:\", len(x))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "250def97-f92d-4e37-b05c-5581f942c1be",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Define significance level\n",
+    "alpha = 0.05\n",
+    "\n",
+    "# Perform linear regression\n",
+    "results = stats.linregress(x, y)\n",
+    "\n",
+    "slope = results.slope\n",
+    "intercept = results.intercept\n",
+    "p_value = results.pvalue\n",
+    "std_error = results.stderr\n",
+    "r_value = results.rvalue\n",
+    "\n",
+    "# Calculate test statistic\n",
+    "t_stat = slope / std_error\n",
+    "\n",
+    "print(\"Sample size:\", len(x))\n",
+    "print(\"Slope:\", slope)\n",
+    "print(\"Intercept:\", intercept)\n",
+    "print(\"Standard error:\", std_error)\n",
+    "print(\"t-statistic:\", t_stat)\n",
+    "print(\"Degrees of freedom:\", len(x) - 2)\n",
+    "print(\"p-value:\", p_value)\n",
+    "print(\"Correlation coefficient:\", r_value)\n",
+    "print(\"R-squared:\", r_value**2)\n",
+    "\n",
+    "# Hypothesis test conclusion\n",
+    "if p_value < alpha:\n",
+    "    print(\"Reject the null hypothesis.\")\n",
+    "    print(\"There is a statistically significant linear relationship.\")\n",
+    "else:\n",
+    "    print(\"Fail to reject the null hypothesis.\")\n",
+    "    print(\"There is insufficient evidence of a linear relationship.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d4f00c87-692d-4c94-8318-34f000f1ea2b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def linear_regression(x, y):\n",
+    "    results = stats.linregress(x, y)\n",
+    "    return results.slope, results.intercept\n",
+    "\n",
+    "a, b = linear_regression(x, y)\n",
+    "\n",
+    "res = stats.bootstrap(\n",
+    "    (x, y),\n",
+    "    linear_regression,\n",
+    "    confidence_level=0.95,\n",
+    "    paired=True,\n",
+    "    n_resamples=10000,\n",
+    "    random_state=42\n",
+    ")\n",
+    "\n",
+    "low = res.confidence_interval.low\n",
+    "high = res.confidence_interval.high\n",
+    "\n",
+    "print(\"Slope:\", a)\n",
+    "print(\"95% CI:\", [low[0], high[0]])\n",
+    "\n",
+    "print(\"Intercept:\", b)\n",
+    "print(\"95% CI:\", [low[1], high[1]])\n",
+    "\n",
+    "print(\"p-value:\", p_value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a7d09708-f558-4156-bdfa-bea14c26aa8e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x_line = np.linspace(min(x), max(x), 100)\n",
+    "y_line = intercept + slope * x_line\n",
+    "\n",
+    "plt.figure(figsize=(8, 5))\n",
+    "\n",
+    "plt.scatter(x, y, c='k', label='Observed data')\n",
+    "\n",
+    "plt.plot(\n",
+    "    x_line,\n",
+    "    y_line,\n",
+    "    color='red',\n",
+    "    label=f'y = {slope:.3f}x + {intercept:.3f}'\n",
+    ")\n",
+    "\n",
+    "plt.xlabel('Total sleep duration (hours)')\n",
+    "plt.ylabel('Maximum lifespan (years)')\n",
+    "\n",
+    "plt.title(\n",
+    "    f'Linear Regression\\n'\n",
+    "    f'R² = {r_value**2:.3f}, p = {p_value:.4g}'\n",
+    ")\n",
+    "\n",
+    "plt.legend()\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3872de47-557e-4da2-85ec-9a765f11fe66",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "predictions = intercept + slope * x\n",
+    "residuals = y - predictions\n",
+    "\n",
+    "plt.figure(figsize=(8, 5))\n",
+    "\n",
+    "plt.scatter(predictions, residuals, c='k')\n",
+    "plt.axhline(0, color='red', linestyle='--')\n",
+    "\n",
+    "plt.xlabel('Predicted maximum lifespan')\n",
+    "plt.ylabel('Residuals')\n",
+    "plt.title('Residuals vs Fitted Values')\n",
+    "\n",
+    "plt.show()\n",
+    "\n",
+    "# Normal Q-Q plot\n",
+    "stats.probplot(residuals, dist=\"norm\", plot=plt)\n",
+    "plt.title(\"Normal Q-Q Plot\")\n",
+    "plt.show()\n",
+    "\n",
+    "# Shapiro-Wilk normality test\n",
+    "print(stats.shapiro(residuals))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
